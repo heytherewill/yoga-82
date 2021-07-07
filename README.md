@@ -3,7 +3,9 @@
 ## Dataset preparation
 
 - Vist this [link](https://sites.google.com/view/yoga-82/home) and fill out the form to download the dataset
-- Download images using urls provided in dataset.
+- Download images using the `image_fetcher.ps1`.
+- Manually clean up the images folder by removing wrongly downloaded ones.
+- Run `clean_up_sets.ps1` to update the contents of the train/test splits.
 - Use train and test splits provided in the dataset.
 
 ## Usage

@@ -151,8 +151,8 @@ def main():
 
     path = '/home/user/3TB_HDD/Database/Yoga_July_09_Final/'#'home/your_path/'
     img_path = path+'yoga_dataset_images_final/'
-    train_file = path+'yoga_train.txt'
-    test_file = path+'yoga_test.txt'
+    train_file = path+'actual_yoga_train.txt'
+    test_file = path+'actual_yoga_test.txt'
     #test_test ='yoga_test.txt'
     f1 = open(train_file, 'r')
     f2 = open(test_file, 'r')
@@ -201,6 +201,9 @@ def main():
 
     score = model.evaluate_generator(generator_val_batch(test_file,8,num_classes,img_path),steps=test_samples // 8, verbose=1)
     print(score)
+
+    converter = tf.lite.TFLiteConverter.from_keras_model(model)
+
 
 if __name__ == '__main__':
     main()

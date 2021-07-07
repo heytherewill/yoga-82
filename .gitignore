@@ -1,0 +1,9 @@
+__pycache__
+actual_yoga_train.txt
+actual_yoga_test.txt
+failures.txt
+readme.txt
+yoga_dataset_images_final
+yoga_dataset_links
+yoga_train.txt
+yoga_test.txt
