@@ -10,12 +10,11 @@
 
 ## Usage
 
+Use `pip` to install `keras`, `keras_applications`, `sklearn`, `Pillow` and `tensorflow`.
 Check `models.py` for different existing models and modified hierarchical models. And modify `train_yoga.py` accordingly.
 
 Train model
 `python train_yoga.py`
-
-
 
 ## Reference
 Verma, M., Kumawat, S., Nakashima, Y., & Raman, S. (2020). Yoga-82: a new dataset for fine-grained classification of human poses. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (pp. 1038-1039).
