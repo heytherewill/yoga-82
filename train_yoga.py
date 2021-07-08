@@ -201,7 +201,8 @@ def main():
     print(score)
 
     converter = tf.lite.TFLiteConverter.from_keras_model(model)
-
+    tflite_model = converter.convert()
+    open("YogaModel.tflite", "wb").write(tflite_model)
 
 if __name__ == '__main__':
     main()
