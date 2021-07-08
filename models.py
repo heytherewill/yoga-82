@@ -3,10 +3,11 @@ import os
 os.environ["CUDA_DEVICE_ORDER"]= "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]= "0"
 
-import keras
-from keras.layers import Dense,Dropout,Conv2D,Input,MaxPool2D,Flatten,Activation, GlobalAveragePooling2D, BatchNormalization, MaxPooling2D, Conv2D, Concatenate
-from keras.models import Model
-keras.backend.set_image_data_format('channels_last')
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras.layers import Dense,Dropout,Conv2D,Input,MaxPool2D,Flatten,Activation, GlobalAveragePooling2D, BatchNormalization, MaxPooling2D, Conv2D, Concatenate
+from tensorflow.keras.models import Model
+tf.keras.backend.set_image_data_format('channels_last')
 
 #import model from keras if using single level classification
 
