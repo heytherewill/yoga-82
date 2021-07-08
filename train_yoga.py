@@ -4,11 +4,12 @@ os.environ["CUDA_VISIBLE_DEVICES"]= "0"
 
 
 # -*- coding:utf-8 -*-
+import tensorflow as tf
+from tensorflow import keras
 from models import model_one_class, dense201_hirar, dense201_hirar_6same20, dense201_hirar_new
-from keras.optimizers import SGD,Adam
-from keras.utils import np_utils
+from tensorflow.keras.optimizers import SGD,Adam
+import tensorflow.python.keras.utils as np_utils
 import numpy as np
-import keras
 import random
 #import cv2
 import os
@@ -16,9 +17,8 @@ import random
 #import matplotlib
 #matplotlib.use('AGG')
 #import matplotlib.pyplot as plt
-from keras.callbacks import ModelCheckpoint,CSVLogger
-import tensorflow as tf
-import keras.backend as K
+from tensorflow.keras.callbacks import ModelCheckpoint,CSVLogger
+import tensorflow.keras.backend as K
 from PIL import Image
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
@@ -27,8 +27,6 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 import warnings
 warnings.filterwarnings("ignore")
-
-
 
 def preprocess(inputs):
     '''
@@ -110,9 +108,9 @@ def generator_train_batch(train_txt,batch_size,num_classes,img_path):
             x_train, x1_labels, x2_labels, x3_labels = process_batch(new_line[a:b],img_path,train=True)
             x = preprocess(x_train)
             #x = x_train
-            y1 = np_utils.to_categorical(np.array(x1_labels), class_6)
-            y2 = np_utils.to_categorical(np.array(x2_labels), class_20)
-            y3 = np_utils.to_categorical(np.array(x3_labels), class_82)
+            y1 = tf.keras.utils.to_categorical(np.array(x1_labels), class_6)
+            y2 = tf.keras.utils.to_categorical(np.array(x2_labels), class_20)
+            y3 = tf.keras.utils.to_categorical(np.array(x3_labels), class_82)
             #y = np_utils.to_categorical(np.array(x_labels), num_classes)
             #x = np.transpose(x, (0,3,1,2))
             y = [y1,y2,y3]

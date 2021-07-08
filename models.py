@@ -73,17 +73,17 @@ def model_one_class(
         class_82=82):
     # for results of sota papers
     inputs = Input(input_shape)
-    base_model= ResNet50(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= ResNet101(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= ResNet50V2(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= ResNet101V2(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= DenseNet121(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= DenseNet169(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= DenseNet201(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= MobileNet(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= MobileNetV2(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= ResNeXt50( input_tensor = inputs, include_top = False, weights = None,backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
-    #base_model= DenseNet121(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
+    base_model= ResNet50(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= ResNet101(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= ResNet50V2(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= ResNet101V2(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= DenseNet121(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= DenseNet169(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= DenseNet201(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= MobileNet(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= MobileNetV2(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= ResNeXt50( input_tensor = inputs, include_top = False, weights = None,backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
+    #base_model= DenseNet121(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = tf.keras.layers , models = keras.models , utils = keras.utils)
     
 
     x=  base_model.output
@@ -173,7 +173,7 @@ def dense201_hirar_new(
     # for variant 3 in the paper
 
     inputs = Input(input_shape)
-    base_model= DenseNet201_hir(include_top=False, weights=None, input_tensor = inputs, backend = keras.backend , layers = keras.layers , models = keras.models , utils = keras.utils)
+    base_model= DenseNet201_hir(include_top=False, weights=None, input_tensor = inputs, backend = tf.keras.backend , layers = tf.keras.layers , models = tf.keras.models , utils = tf.keras.utils)
     
     [x1,x2,x] = base_model.output
 

@@ -21,10 +21,11 @@ from __future__ import print_function
 
 import os
 
-from keras import layers
-from keras import backend
-from keras import models
-from keras import utils as keras_utils
+import tensorflow as tf
+from tensorflow.keras import layers
+from tensorflow.keras import backend
+from tensorflow.keras import models
+import tensorflow.python.keras.utils as keras_utils
 from keras_applications import imagenet_utils
 from keras_applications.imagenet_utils import decode_predictions
 from keras_applications.imagenet_utils import _obtain_input_shape
@@ -257,7 +258,7 @@ def DenseNet(blocks,
     # Ensure that the model takes into account
     # any potential predecessors of `input_tensor`.
     if input_tensor is not None:
-        inputs = keras_utils.get_source_inputs(input_tensor)
+        inputs = tf.keras.utils.get_source_inputs(input_tensor)
     else:
         inputs = img_input
 
